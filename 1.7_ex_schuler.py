@@ -9,6 +9,8 @@ youtube.com
 Roblib package function dot will be used alongside natural python array
 multiplication operator @ without distinction
 
+Check https://github.com/queyrusi/Kalman for updates!
+
 """
 
 __author__ = "Simonkey"
