@@ -82,6 +82,6 @@ if __name__ == "main":
         # More entertaining:
         a = 2
         # Euler method:
-        # x = x + dt * f(x)
+        # x = x + dt * f(x, a)
         # Runge Kutta method:
         x = x + dt * (0.25 * f(x, a) + 0.75 * f(x + (2 / 3) * dt * f(x, a), a))
