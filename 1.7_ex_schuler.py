@@ -43,11 +43,11 @@ def f(px, pa=0):
 
     """
     x_vector = px.flatten()
-    x_dot = array([x_vector[2],
-                   x_vector[3],
-                   pa / r,
-                   (l2 - l1) / (l1 ** 2 + l2 ** 2) * (g * sin(x_vector[1]) -
-                                                      pa * cos(x_vector[1]))
+    x_dot = array([[x_vector[2]],
+                   [x_vector[3]],
+                   [pa / r],
+                   [(l2 - l1) / (l1 ** 2 + l2 ** 2) * 
+                    (g * sin(x_vector[1]) - pa * cos(x_vector[1])) - a / r]
                    ]
                   )
     return x_dot
@@ -78,7 +78,9 @@ if __name__ == "main":
     for t in arange(0, 5, dt):
         clear(ax)
         draw(x)
-        a = randn()
+        # a = randn()
+        # More entertaining:
+        a = 2
         # Euler method:
         # x = x + dt * f(x)
         # Runge Kutta method:
