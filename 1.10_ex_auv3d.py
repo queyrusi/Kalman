@@ -45,6 +45,7 @@ def draw(x):
 
     Returns:
         None
+        
     """
     x = x.flatten()
     ax.clear()
