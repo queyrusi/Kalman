@@ -3,7 +3,7 @@
 
 """1.10_ex_auv3d.py
 
-Slight adaptation from Pr. L. Jaulin's "rob exo 1.10 : 3D robot graphics",
+Slight adaptation of Pr. L. Jaulin's "rob exo 1.10 : 3D robot graphics",
 
 Roblib package function dot will be used alongside natural python array
 multiplication operator @ without distinction
