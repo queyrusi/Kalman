@@ -59,8 +59,6 @@ def draw(p, y, col):
              p[1] + array([0, y[i] * sin(p[2] + i * pi / 4)]), color=col)
 
 
-
-
 def f(p):
     """computes distances-to-the-walls vector
 
