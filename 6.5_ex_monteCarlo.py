@@ -18,7 +18,6 @@ __status__ = "Development"
 __name__ = "main"
 
 from roblib import *
-import numpy as np
 import matplotlib.pyplot as plt
 import random
 
