@@ -72,7 +72,6 @@ def f(p):
     y_dyn = 8 * [9999999]
     # somehow, y_dyn[i] = x doesn't replace y_dyn[i] with floating value.
     # Had to replace it with a list and convert it to an array at the end.
-    y_dyn_list = []
     # ------------------
     for i in range(8):  # for every laser on the boat:
         u = array([cos(p[2][0] + (pi / 4) * i),
@@ -91,39 +90,47 @@ def f(p):
                 if alpha >= 0:
                     minimum = min(alpha, y_dyn[i])
                     y_dyn[i] = minimum
-                    # print("LE MINIMUM EST", minimum)
-                    y_dyn_list.append(minimum)
-    return array(y_dyn_list)
+    return array(y_dyn)
 
 
 def dynamic_draw():
     """draws every try of positioning the vehicle
 
     Returns:
+        je (float): smallest norm difference
+
+    Examples:
+        >>>dynamic_draw()
+        0.21570835585612996
+
+    Note:
+        Wait until the end for best result!
 
     """
     y = array([[6.4], [3.6], [2.3], [2.1], [1.7], [1.6], [3.0], [3.1]])
-    t = 0.5
+    y = y.transpose()
+    t = 13
     p0 = array([[2], [1.5], [1]])  # initial guess
     # print("y est", y)
     # print("f(p0) est", f(p0))
     j0 = norm(y - f(p0))
+    je = 0
     # ---------------------------
     while t > 0.01:
         rand_vect = rand(3, 1)
         pe = p0 + t * rand_vect
         # print("pe est", pe)
-        print("j0 est", j0)
-        print("y est", f(pe))
+        # print("j0 est", j0)
+        # print("y est", f(pe))
         je = norm(y - f(pe))
-        print("norme je est", je)
+        # print("norme je est", je)
         draw(pe, y, 'red')
         if je < j0:
             j0 = je
             p0 = pe
-        t = 0.995 * t
+        t = 0.98 * t
         # print("t vaut", t)
-    return
+    return je
 
 
 if __name__ == 'main':
