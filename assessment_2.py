@@ -3,6 +3,8 @@
 
 """Assessment 2
 
+Check https://github.com/queyrusi/Kalman for updates!
+
 """
 
 __author__ = "Simonkey"
